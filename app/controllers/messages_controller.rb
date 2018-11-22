@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(contexr: params[:context], user_id: params[:user_id], classroom_id: params[:classroom_id])
+    @message = Message.new(context: params[:context], user_id: params[:user_id], classroom_id: params[:classroom_id])
     if @message.save
       render json: @message, status: :accepted
     else
