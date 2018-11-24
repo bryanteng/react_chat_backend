@@ -11,13 +11,15 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(context: params[:context], user_id: params[:user_id], classroom_id: params[:classroom_id])
-    if @message.save
-      render json: @message, status: :accepted
-    else
-      render json: {errors: @message.errors.full_messages}, status: :unprocessable_entity
+    message = Message.new(message_params)
+    classroom = Classroom.find(message_params[:classroom_id])
+    if message.save
+      serialized_data = ActiveModelSerializers::Adapter::Json.new(
+        MessageSerializer.new(message)
+      ).serializable_hash
+      MessagesChannel.broadcast_to classroom, serialized_data
+      head :ok
     end
-
   end
 
   def update
