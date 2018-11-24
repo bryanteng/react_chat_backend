@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :messages
   resources :classrooms
 
+  mount ActionCable.server => '/cable'
+
   get '/test_sockets/:id', to: 'users#test_sockets'
 end
