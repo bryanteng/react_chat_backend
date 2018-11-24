@@ -36,6 +36,11 @@ class UsersController < ApplicationController
     @user.destroy
   end
 
+  def test_sockets
+	classroom = Classroom.find(params[:id])
+	ClassroomsChannel.broadcast_to classroom, "Yo what Up!? I'm a socket"
+  end
+
   private
 
   def user_params
