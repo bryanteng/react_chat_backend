@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :users
   resources :messages
   resources :classrooms
+
+  get '/test_sockets/:id', to: 'users#test_sockets'
 end
