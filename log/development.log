@@ -4590,3 +4590,287 @@ Completed 200 OK in 50ms (ActiveRecord: 41.9ms)
 
 MessagesChannel transmitting {"message"=>{"context"=>"n", "user"=>{"id"=>2, "username"=>"bryan"}, "created_at"=>"2018-11-26T21:16:55.908Z", "classroom_id"=>1, "classroom"=>{"id"=>1, "name"=>"class Class", "subject"=>"coding"}}} (via streamed from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x)
 MessagesChannel transmitting {"message"=>{"context"=>"n", "user"=>{"id"=>2, "username"=>"bryan"}, "created_at"=>"2018-11-26T21:16:55.908Z", "classroom_id"=>1, "classroom"=>{"id"=>1, "name"=>"class Class", "subject"=>"coding"}}} (via streamed from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x)
+Started GET "/cable" for 127.0.0.1 at 2018-11-26 16:17:53 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bryan/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-26 16:17:53 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ClassroomsChannel is transmitting the subscription confirmation
+ClassroomsChannel is streaming from classrooms_channel
+Started GET "/cable" for 127.0.0.1 at 2018-11-26 16:17:53 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-26 16:17:53 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+ClassroomsChannel is transmitting the subscription confirmation
+ClassroomsChannel is streaming from classrooms_channel
+  [1m[36mClassroom Load (1.6ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mClassroom Load (1.4ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/messages_channel.rb:3
+  ↳ app/channels/messages_channel.rb:3
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-26 16:18:05 -0500
+ClassroomsChannel stopped streaming from classrooms_channel
+MessagesChannel stopped streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x
+Started GET "/messages" for 127.0.0.1 at 2018-11-26 16:18:06 -0500
+Started GET "/cable" for 127.0.0.1 at 2018-11-26 16:18:06 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-26 16:18:06 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Processing by MessagesController#index as */*
+Started GET "/classrooms" for 127.0.0.1 at 2018-11-26 16:18:06 -0500
+Processing by ClassroomsController#index as */*
+  [1m[36mMessage Load (4.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages"[0m
+  ↳ app/controllers/messages_controller.rb:5
+  [1m[36mClassroom Load (4.1ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  ↳ app/controllers/classrooms_controller.rb:5
+ClassroomsChannel is transmitting the subscription confirmation
+ClassroomsChannel is streaming from classrooms_channel
+[active_model_serializers]   [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."classroom_id" = $1[0m  [["classroom_id", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (72.35ms)
+Completed 200 OK in 96ms (Views: 63.6ms | ActiveRecord: 32.5ms)
+
+
+[active_model_serializers]   [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mClassroom Load (0.8ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+  ↳ app/channels/messages_channel.rb:3
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+MessagesChannel is transmitting the subscription confirmation
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+MessagesChannel is streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/messages_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (75.75ms)
+Completed 200 OK in 144ms (Views: 84.2ms | ActiveRecord: 55.5ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2018-11-26 16:18:13 -0500
+Processing by MessagesController#create as JSON
+  Parameters: {"context"=>"o", "user_id"=>2, "classroom_id"=>1, "message"=>{"context"=>"o", "user_id"=>2, "classroom_id"=>1}}
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:16
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:16
+  [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:16
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("context", "user_id", "classroom_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["context", "o"], ["user_id", 2], ["classroom_id", 1], ["created_at", "2018-11-26 21:18:13.363144"], ["updated_at", "2018-11-26 21:18:13.363144"]]
+  ↳ app/controllers/messages_controller.rb:16
+  [1m[35m (40.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:16
+[ActionCable] Broadcasting to messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x: {:message=>{:context=>"o", :user=>{:id=>2, :username=>"bryan"}, :created_at=>Mon, 26 Nov 2018 21:18:13 UTC +00:00, :classroom_id=>1, :classroom=>{:id=>1, :name=>"class Class", :subject=>"coding"}}}
+Completed 200 OK in 59ms (ActiveRecord: 41.7ms)
+
+
+MessagesChannel transmitting {"message"=>{"context"=>"o", "user"=>{"id"=>2, "username"=>"bryan"}, "created_at"=>"2018-11-26T21:18:13.363Z", "classroom_id"=>1, "classroom"=>{"id"=>1, "name"=>"class Class", "subject"=>"coding"}}} (via streamed from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x)
+MessagesChannel transmitting {"message"=>{"context"=>"o", "user"=>{"id"=>2, "username"=>"bryan"}, "created_at"=>"2018-11-26T21:18:13.363Z", "classroom_id"=>1, "classroom"=>{"id"=>1, "name"=>"class Class", "subject"=>"coding"}}} (via streamed from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x)
+Started POST "/messages" for 127.0.0.1 at 2018-11-26 16:18:18 -0500
+Processing by MessagesController#create as JSON
+  Parameters: {"context"=>"p", "user_id"=>2, "classroom_id"=>1, "message"=>{"context"=>"p", "user_id"=>2, "classroom_id"=>1}}
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:16
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:16
+  [1m[36mCACHE Classroom Load (0.0ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:16
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("context", "user_id", "classroom_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["context", "p"], ["user_id", 2], ["classroom_id", 1], ["created_at", "2018-11-26 21:18:18.449341"], ["updated_at", "2018-11-26 21:18:18.449341"]]
+  ↳ app/controllers/messages_controller.rb:16
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:16
+[ActionCable] Broadcasting to messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x: {:message=>{:context=>"p", :user=>{:id=>2, :username=>"bryan"}, :created_at=>Mon, 26 Nov 2018 21:18:18 UTC +00:00, :classroom_id=>1, :classroom=>{:id=>1, :name=>"class Class", :subject=>"coding"}}}
+Completed 200 OK in 13ms (ActiveRecord: 6.8ms)
+
+
+MessagesChannel transmitting {"message"=>{"context"=>"p", "user"=>{"id"=>2, "username"=>"bryan"}, "created_at"=>"2018-11-26T21:18:18.449Z", "classroom_id"=>1, "classroom"=>{"id"=>1, "name"=>"class Class", "subject"=>"coding"}}} (via streamed from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x)
+MessagesChannel transmitting {"message"=>{"context"=>"p", "user"=>{"id"=>2, "username"=>"bryan"}, "created_at"=>"2018-11-26T21:18:18.449Z", "classroom_id"=>1, "classroom"=>{"id"=>1, "name"=>"class Class", "subject"=>"coding"}}} (via streamed from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x)
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-26 16:21:37 -0500
+ClassroomsChannel stopped streaming from classrooms_channel
+MessagesChannel stopped streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x
+Started GET "/cable" for 127.0.0.1 at 2018-11-26 16:21:37 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-26 16:21:37 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/classrooms" for 127.0.0.1 at 2018-11-26 16:21:37 -0500
+Processing by ClassroomsController#index as */*
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."classroom_id" = $1[0m  [["classroom_id", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (30.75ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 1.2ms)
+
+
+ClassroomsChannel is transmitting the subscription confirmation
+ClassroomsChannel is streaming from classrooms_channel
+  [1m[36mClassroom Load (0.8ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/messages_channel.rb:3
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-26 16:21:43 -0500
+ClassroomsChannel stopped streaming from classrooms_channel
+MessagesChannel stopped streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x
+Started GET "/cable" for 127.0.0.1 at 2018-11-26 16:21:43 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-11-26 16:21:43 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/classrooms" for 127.0.0.1 at 2018-11-26 16:21:43 -0500
+Processing by ClassroomsController#index as */*
+  [1m[36mClassroom Load (2.3ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mMessage Load (9.0ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."classroom_id" = $1[0m  [["classroom_id", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers]   [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+ClassroomsChannel is transmitting the subscription confirmation
+ClassroomsChannel is streaming from classrooms_channel
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (88.64ms)
+Completed 200 OK in 93ms (Views: 80.1ms | ActiveRecord: 12.5ms)
+
+
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/channels/messages_channel.rb:3
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8x
