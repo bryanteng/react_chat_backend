@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :messages
   resources :classrooms
 
+  post "/login", to: "sessions#login"
+
   mount ActionCable.server => '/cable'
 
 end

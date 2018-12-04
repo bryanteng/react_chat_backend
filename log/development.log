@@ -4282,3 +4282,80 @@ MessagesChannel is streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsY
   ↳ db/seeds.rb:13
   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
   ↳ db/seeds.rb:13
+Started GET "/cable" for 127.0.0.1 at 2018-12-04 14:00:13 -0500
+Started GET "/classrooms" for 127.0.0.1 at 2018-12-04 14:00:13 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bryan/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by ClassroomsController#index as */*
+  [1m[35m (16.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/bryan/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-12-04 14:00:13 -0500
+  [1m[36mClassroom Load (35.4ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  ↳ app/controllers/classrooms_controller.rb:5
+ClassroomsChannel is transmitting the subscription confirmation
+ClassroomsChannel is streaming from classrooms_channel
+[active_model_serializers]   [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."classroom_id" = $1[0m  [["classroom_id", 3]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (16.28ms)
+Completed 200 OK in 103ms (Views: 48.6ms | ActiveRecord: 49.1ms)
+
+
+  [1m[36mClassroom Load (0.3ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/channels/messages_channel.rb:3
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8z
+Started POST "/login" for 127.0.0.1 at 2018-12-04 14:00:16 -0500
+Processing by SessionsController#login as */*
+  Parameters: {"username"=>"bryan", "session"=>{"username"=>"bryan"}}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/sessions_controller.rb:39:in `user_params'
+app/controllers/sessions_controller.rb:3:in `login'
+Finished "/cable/" [WebSocket] for 127.0.0.1 at 2018-12-04 14:02:00 -0500
+ClassroomsChannel stopped streaming from classrooms_channel
+MessagesChannel stopped streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8z
+Started GET "/cable" for 127.0.0.1 at 2018-12-04 14:02:01 -0500
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2018-12-04 14:02:01 -0500
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+Started GET "/classrooms" for 127.0.0.1 at 2018-12-04 14:02:01 -0500
+Processing by ClassroomsController#index as */*
+  [1m[36mClassroom Load (10.5ms)[0m  [1m[34mSELECT "classrooms".* FROM "classrooms"[0m
+  ↳ app/controllers/classrooms_controller.rb:5
+ClassroomsChannel is transmitting the subscription confirmation
+ClassroomsChannel is streaming from classrooms_channel
+[active_model_serializers]   [1m[36mMessage Load (165.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."classroom_id" = $1[0m  [["classroom_id", 3]]
+[active_model_serializers]   ↳ app/controllers/classrooms_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (168.99ms)
+Completed 200 OK in 182ms (Views: 5.3ms | ActiveRecord: 176.2ms)
+
+
+  [1m[36mClassroom Load (0.9ms)[0m  [1m[34mSELECT  "classrooms".* FROM "classrooms" WHERE "classrooms"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/channels/messages_channel.rb:3
+MessagesChannel is transmitting the subscription confirmation
+MessagesChannel is streaming from messages:Z2lkOi8vcmVhY3QtY2hhdC1iYWNrZW5kL0NsYXNzcm9vbS8z
+Started POST "/login" for 127.0.0.1 at 2018-12-04 14:02:06 -0500
+Processing by SessionsController#login as */*
+  Parameters: {"user"=>{"username"=>"bryan"}, "session"=>{"user"=>{"username"=>"bryan"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "bryan"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 200 OK in 40ms (Views: 24.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-12-04 14:02:42 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5
+[active_model_serializers]   [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1[0m  [["user_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5
+[active_model_serializers]   [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."user_id" = $1[0m  [["user_id", 5]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (4.45ms)
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 2.6ms)
+
+
