@@ -9,4 +9,5 @@ User.destroy_all
 Classroom.destroy_all
 
 User.create(username: "bryan")
+User.create(username: "bteng")
 Classroom.create(name: "class Class", subject: "coding")

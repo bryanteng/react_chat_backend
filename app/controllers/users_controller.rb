@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(username: params[:username], password: params[:password])
+    @user = User.new(username: params[:username])
     if @user.save
       render json: @user, status: :accepted
     else
@@ -34,11 +34,6 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-  end
-
-  def test_sockets
-	classroom = Classroom.find(params[:id])
-	ClassroomsChannel.broadcast_to classroom, "Yo what Up!? I'm a socket"
   end
 
   private
